@@ -1,5 +1,5 @@
 //4a
-console.log("Hello my name is Jim Welander");
+console.log("Hello my name is James Welander");
 //4B
 console.log("This is a 'single quoted statement' and this is a \"double quoed statement\"");
 //5a
