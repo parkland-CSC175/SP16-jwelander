@@ -18,7 +18,7 @@ $(document).ready(function () {
         });
         var $myEpisode = $(episodeID);
         $myEpisode.css("backgroundColor", "black");
-        $myEpisode.css("color", "black");
+        $myEpisode.css("color", "yellow");
         $myEpisode.slideDown();
     });
 });
