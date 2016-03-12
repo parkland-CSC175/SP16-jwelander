@@ -32,13 +32,11 @@ $(document).ready(function () {
             reCalc(rowIndex, qtyChange);
         }
     });
-    function reCalc(aRowIndex, qtyChange){
+    function reCalc(aRowIndex, qtyChange) {
         var costCell = "tr:eq(" + aRowIndex + ") td:eq('5')";
         var totalCell = "tr:eq(" + aRowIndex + ") td:eq('6')";
         var newTotal = (parseFloat($(costCell).text()) * qtyChange);
         var newTotalOut = (newTotal.toFixed(2)).toString();
-        console.log(newTotal);
-        console.log(newTotalOut);
         $(totalCell).text(newTotalOut);
     }
 });
