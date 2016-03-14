@@ -1,0 +1,13 @@
+body {
+    background: transparent;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+button.btn-icon {
+    border: 0;
+    padding: 3px 6px;
+    background-color: transparent;
+}
