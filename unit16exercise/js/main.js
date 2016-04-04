@@ -37,12 +37,23 @@ $(document).ready(function() {
         $outDiv.append($p);
         function doSomething() {
             var currentdate = new Date();
-            var dateTime = "Now: " + currentdate.getDate() + "/"
-                + (currentdate.getMonth() + 1) + "/"
-                + currentdate.getFullYear() + " "
-                + currentdate.getHours() + ":"
-                + currentdate.getMinutes() + ":"
-                + currentdate.getSeconds();
+            var dd = currentdate.getDate();
+            if (dd < 10) dd = "0" + dd;
+            var mm = currentdate.getMonth() + 1;
+            if (mm < 10) mm = "0" + mm;
+            var yyyy = currentdate.getFullYear();
+            var hh = currentdate.getHours();
+            if (hh < 10) hh = "0" + hh;
+            var nn = currentdate.getMinutes();
+            if (nn < 10) nn = "0" + nn;
+            var ss = currentdate.getSeconds();
+            if (ss < 10) ss = "0" + ss;
+            var dateTime = "Now: " + dd + "/"
+                + mm + "/"
+                + yyyy + " "
+                + hh + ":"
+                + mm + ":"
+                + ss;
 
 
             $p.text(dateTime);
