@@ -22,14 +22,14 @@
                 <form class="form-inline" role="form">
                     <input id="brand-text" type="text" class="form-control" placeholder="New Brand" name="brand" />
                     <input id="country-text" type="text" class="form-control" placeholder="USA" name="country" />
-                    <button id="btn-brand-add" type="button" class="btn btn-primary">Add</button>
+                    <button id="btn-brand-add" type="button" class="btn btn-primary" data-bind="click: addToItems">Add</button>
                 </form>
             </div>
         </div>
         
         <div class="row">
             <div class="col-sm-12">
-                <table class="table">
+                <table class="table" >
                     <thead>
                         <tr>
                             <th>Brand</th>
@@ -38,13 +38,13 @@
                         </tr>
                     </thead>
                     
-                    <tbody>
+                    <tbody data-bind="foreach: carBrands">
                         <tr>
-                            <td>Chevrolet</td>
-                            <td>USA</td>
-                            <td>
-                                <button title="remove" type="button" class="btn btn-icon" data-action="remove">
-                                    <span class="glyphicon glyphicon-trash"></span>
+                            <td data-bind="text: make_display"></td>
+                            <td data-bind="text: make_country"></td>
+                            <td data-bind="click: $root.removeAnItem">
+                                <button title="remove" type="button" class="btn btn-icon" data-action="remove" >
+                                    <span class="glyphicon glyphicon-trash" ></span>
                                 </button>
                             </td>
                         </tr>
