@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" >
 
         <div class="row">
             <div class="col-sm-12">
@@ -26,42 +26,27 @@
 
         <div class="row">
             <div class="col-sm-12">
-                <table class="table">
-                    <tr class="completed">
+                <table class="table" data-bind="foreach: todos">
+                    <tr data-bind="css: { 'completed': done }">
+                        <td data-bind="text: job"></td>
                         <td>
-                            My first Todo Item
-                        </td>
-                        <td>
-                            <button title="complete" type="button" class="btn btn-icon" data-action="complete">
+                            <button data-bind="click: $parent.markAsDone" title="complete" type="button" class="btn btn-icon" data-action="complete">
                                 <span class="glyphicon glyphicon-ok"></span>
                             </button>
-                            <button title="remove" type="button" class="btn btn-icon" data-action="remove">
+                            <button data-bind="click: $parent.removeItem" title="remove" type="button" class="btn btn-icon" data-action="remove">
                                 <span class="glyphicon glyphicon-trash"></span>
                             </button>
                         </td>
-                        <td>
-                            Completed <span class="completed-ticker">10</span> minutes ago.
+                        <td data-bind="if: done">
+                            Completed <span class="completed-ticker" data-bind="text: timeSinceCompleted"></span> minutes ago.
                         </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            My second Todo Item
-                        </td>
-                        <td>
-                            <button title="complete" type="button" class="btn btn-icon" data-action="complete">
-                                <span class="glyphicon glyphicon-ok"></span>
-                            </button>
-                            <button title="remove" type="button" class="btn btn-icon" data-action="remove">
-                                <span class="glyphicon glyphicon-trash"></span>
-                            </button>
-                        </td>
-                        <td></td>
                     </tr>
                 </table>
             </div>
 
         </div>
     </div>
+   
 
     <!-- JS -->
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
